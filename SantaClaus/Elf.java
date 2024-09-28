@@ -20,7 +20,9 @@ public class Elf implements Runnable{
                     santaClausProblem.getElfTex().release();
                 }
                 santaClausProblem.getMutex().release();
-                getHelp();
+                if(santaClausProblem.elves == 3) {
+                    getHelp();
+                }
                 santaClausProblem.getMutex().acquire();
                 santaClausProblem.elves--;
                 if (santaClausProblem.elves == 0) {

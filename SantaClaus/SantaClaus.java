@@ -4,7 +4,6 @@ import java.util.concurrent.Semaphore;
 public class SantaClaus implements Runnable{
 
     private Semaphore santaSem;
-    private Semaphore elfTex;
     private Semaphore reindeerSem;
     private Semaphore mutex;
     private int reindeer;
@@ -12,11 +11,10 @@ public class SantaClaus implements Runnable{
 
     public SantaClaus(SantaClausProblem santaClausProblem){
         this.santaSem = santaClausProblem.getSantaSem();
-        this.elfTex = santaClausProblem.getElfTex();
         this.reindeerSem = santaClausProblem.getReindeerSem();
         this.mutex = santaClausProblem.getMutex();
+        this.reindeer = santaClausProblem.getReindeer();
         this.elves = santaClausProblem.getElves();
-        this.reindeer = santaClausProblem.getReindeer();    
     }
 
     @Override
